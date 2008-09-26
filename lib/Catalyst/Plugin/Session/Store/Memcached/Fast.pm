@@ -11,22 +11,23 @@ use NEXT;
 use Cache::Memcached::Fast;
 use Catalyst::Utils;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_classdata(qw/_session_memcached_storage/);
 __PACKAGE__->mk_classdata(qw/_session_memcached_expires/);
 
 =head1 NAME
 
-Catalyst::Plugin::Session::Store::Memcached - Memcached session storage backend.
+Catalyst::Plugin::Session::Store::Memcached::Fast - Memcached session storage backend.
 
 =head1 SYNOPSIS
 
-    use Catalyst qw/Session Session::Store::Memcached Session::State::Foo/;
+    use Catalyst qw/Session Session::Store::Memcached::Fast Session::State::Foo/;
     
     MyApp->config->{session} = {
         expires => 3600,
-        servers => '127.0.0.1:11210',
+        servers => ['127.0.0.1:11210'],
+        # another Cache::Memcached::Fast params
     };
 
     # ... in an action:
@@ -34,7 +35,7 @@ Catalyst::Plugin::Session::Store::Memcached - Memcached session storage backend.
 
 =head1 DESCRIPTION
 
-C<Catalyst::Plugin::Session::Store::Memcached> is a fast session storage plugin
+C<Catalyst::Plugin::Session::Store::Memcached::Fast> is a fast session storage plugin
 for Catalyst that uses memcached cache. It is based on L<Cache::Memcached::Fast>.
 
 =head2 METHODS

@@ -1,6 +1,6 @@
 ---
 name: Catalyst-Plugin-Session-Store-Memcached-Fast
-version: 0.01
+version: 0.02
 author:
   - 'Denis Arapov, C<bwizard@blackwizard.pp.ru>'
 abstract: Memcached session storage backend.
@@ -14,7 +14,7 @@ requires:
 provides:
   Catalyst::Plugin::Session::Store::Memcached::Fast:
     file: lib/Catalyst/Plugin/Session/Store/Memcached/Fast.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
